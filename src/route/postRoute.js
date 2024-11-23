@@ -25,6 +25,8 @@ const route=(app) => {
   app.post("/post", newPost);
 
   app.post("/post/upload", upload.single("img"), uploadImg);
+
+  app.put("/post/upload/:id", );
 };
 
 export default route;

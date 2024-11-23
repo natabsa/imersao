@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import dbConnct from "../config/dbConfig.js";
 
 // Establish a database connection with provided connection string
@@ -14,4 +15,8 @@ export async function  createPost(newPost){
 
     // Insert a newPost document into 'post' collection in 'imersao' database
     return connection.db("imersao").collection("post").insertOne(newPost);
+}
+
+export async function  putDBPost(id, post){
+    return connection.db("imersao").collection("post").updateOne({_id: new ObjectId(ObjectId.createFromHexString(id))}, {$set: post});
 }
