@@ -25,7 +25,8 @@
   "contributors": [],
   "scripts": {
     "dev": "node --watch src/server.js",
-    "test": ""
+    "test": "",
+    "build":"npm install @google/generative-ai && npm install express && npm install mongodb"
   },
   "dependencies": {
     "express": "^4.21.1",
